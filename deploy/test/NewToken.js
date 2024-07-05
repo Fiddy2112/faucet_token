@@ -4,7 +4,10 @@ const { ethers } = require("hardhat");
 describe("NewToken", function () {
   //global vars
   let Token, newToken, owner, addr1, addr2;
-  let tokenCap = 100000000;
+  // let tokenCap = 100000000;
+  let tokenCap = ethers.BigNumber.from("100000000").mul(
+    ethers.BigNumber.from("10").pow(18)
+  );
   let tokenBlockReward = 50;
 
   beforeEach(async function () {
@@ -28,8 +31,8 @@ describe("NewToken", function () {
       const cap = await newToken.cap();
       //   console.log("cap:", cap);clear
       //   console.log("cap:", Number(ethers.utils.formatEther(cap)));
-      //   expect(cap).to.equal(tokenCap);
-      expect(Number(ethers.utils.formatEther(cap))).to.equal(tokenCap);
+      expect(cap).to.equal(tokenCap);
+      // expect(Number(ethers.utils.formatEther(cap))).to.equal(tokenCap);
     });
 
     it("Should set the blockReward to the argument provided during deployment", async function () {
