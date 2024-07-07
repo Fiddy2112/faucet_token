@@ -1,7 +1,8 @@
 {
   "name": "hardhat-project",
   "scripts": {
-    "deploy": "npx hardhat ignition deploy ./ignition/modules/NewToken.js --network sepolia"
+    "deployToken": "npx hardhat ignition deploy ./ignition/modules/NewToken.js --network sepolia",
+    "deployFaucet": "npx hardhat ignition deploy ./ignition/modules/Faucet.js --network sepolia"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
