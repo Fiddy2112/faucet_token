@@ -157,7 +157,7 @@ export default function Home() {
       const resp = await contractWithSigner.requestToken();
       console.log(resp);
       setWithdrawSuccess("Operation successded - enjoy your tokens");
-      setTransactionData(resp.transactionHash);
+      setTransactionData(resp.hash);
     } catch (err) {
       console.error(err.message);
       setWithdrawError(err.message);
@@ -176,7 +176,7 @@ export default function Home() {
         <div className="mt-2">
           <div className="text-center">
             <h1 className="text-2xl font-mono">Faucet</h1>
-            <p className="my-1 font-mono">Fast and reliable 0.25 ST/day</p>
+            <p className="my-1 font-mono">Fast and reliable 50 ST/day</p>
             <div className="my-1">
               {withdrawError && (
                 <div className="text-sm font-mono text-red-800">
